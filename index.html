@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<script>
+    function myfunction(num, num2) {
+        count = num;
+        increment=num2;
+        count += increment;
+        document.getElementById("myCount").innerHTML = count;
+        document.getElementById("myIncrement").innerHTML = increment;
+    }
+    function addincrement(num1){
+        increment=num1+1;
+        myfunction(count-increment, increment)
+    }
+    function resetincrement(){
+        increment=1;
+        myfunction(count-1, increment)
+    }
+</script>
+<head>
+    <link rel="stylesheet" href="websiteStyling.css">
+    <meta charset="UTF-8">
+    <title>Online Counter</title>
+</head>
+<body onload="myfunction(-1,1); addincrement(0)">
+<header>
+    <h1 class="title">Online Counter</h1>
+</header>
+<main>
+    <h2>Current Count: <span id="myCount"></span></h2>
+    <h2 class="increment">Current Increment: <span id="myIncrement"></span></h2>
+    <button onclick="myfunction(count,increment)">Add To Count</button>
+    <button onclick="myfunction(-increment,increment)">Reset Count</button>
+    <button onclick="addincrement(increment)">Add To Increment</button>
+    <button onclick="resetincrement()">Reset Increment</button>
+</main>
+</body>
+</html>
